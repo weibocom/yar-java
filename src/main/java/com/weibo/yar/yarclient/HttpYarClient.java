@@ -49,7 +49,7 @@ public class HttpYarClient extends AbstractYarClient {
 
     @Override
     protected byte[] httpPost(String url, Map<String, String> headers, byte[] content) {
-        RequestConfig requestConfig = RequestConfig.custom().setSocketTimeout(soTimeout).setConnectTimeout(connectTimeout).build();
+        RequestConfig requestConfig = RequestConfig.custom().setConnectionRequestTimeout(soTimeout).setSocketTimeout(soTimeout).setConnectTimeout(connectTimeout).build();
         HttpPost httpPost = new HttpPost(url);
         httpPost.setConfig(requestConfig);
         httpPost.setEntity(new ByteArrayEntity(content, ContentType.APPLICATION_FORM_URLENCODED));
@@ -66,6 +66,8 @@ public class HttpYarClient extends AbstractYarClient {
         } catch (Exception e) {
             log.error("httpclient execute fail.", e);
             return null;
+        } finally{
+            httpPost.releaseConnection();
         }
     }
 
