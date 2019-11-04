@@ -107,7 +107,7 @@ public class PHPUnserializer extends Unserializer {
                 break;
 
             default:
-                throw new UnserializeException("Unable to unserialize unknown type " + type);
+                throw new UnserializeException("Unable to unserialize unknown type " + type, this.pos);
         }
 
         this.history.add(result);

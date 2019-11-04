@@ -19,6 +19,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.source.jdk>1.7</java.source.jdk>
     </properties>
 
     <dependencies>
@@ -34,15 +35,15 @@
             <version>4.3.6</version>
         </dependency>
         <dependency>
-            <groupId>de.ailis.pherialize</groupId>
+            <groupId>com.xk72</groupId>
             <artifactId>pherialize</artifactId>
-            <version>1.2.1</version>
+            <version>1.2.4</version>
         </dependency>
 
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.9.6</version>
+            <version>2.10.0</version>
         </dependency>
 
         <dependency>
@@ -53,16 +54,9 @@
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
-            <version>4.0.36.Final</version>
+            <version>4.1.42.Final</version>
         </dependency>
     </dependencies>
-    <repositories>
-        <repository>
-            <id>ailis-releases</id>
-            <name>Ailis Maven Releases</name>
-            <url>http://nexus.ailis.de/content/groups/public/</url>
-        </repository>
-    </repositories>
     <build>
         <plugins>
             <plugin>
